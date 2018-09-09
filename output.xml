@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180909 19:33:09.515" generator="Robot 3.0.4 (Python 2.7.5 on linux2)">
+<suite source="/home/shinko/Desktop/Shinko/eclipse-workspace/Robot" id="s1" name="Robot">
+<suite source="/home/shinko/Desktop/Shinko/eclipse-workspace/Robot/Slice_Issue.robot" id="s1-s1" name="Slice Issue">
+<test id="s1-s1-t1" name="Open Facebook Page">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180909 19:33:09.755" level="INFO">Opening browser 'Chrome' to base url 'https://www.yandex.com'</msg>
+<status status="PASS" endtime="20180909 19:33:21.931" starttime="20180909 19:33:09.754"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided URL.</doc>
+<arguments>
+<arg>https://www.facebook.com</arg>
+</arguments>
+<msg timestamp="20180909 19:33:21.965" level="INFO">Opening url 'https://www.facebook.com'</msg>
+<status status="PASS" endtime="20180909 19:33:29.984" starttime="20180909 19:33:21.961"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180909 19:33:30.091" starttime="20180909 19:33:29.985"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20180909 19:33:32.093" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20180909 19:33:32.094" starttime="20180909 19:33:30.091"></status>
+</kw>
+<status status="PASS" endtime="20180909 19:33:32.097" critical="yes" starttime="20180909 19:33:09.753"></status>
+</test>
+<test id="s1-s1-t2" name="Fill The SignUp Form">
+<kw name="Select From List By Value" library="Selenium2Library">
+<doc>Selects `*values` from list identified by `locator`</doc>
+<arguments>
+<arg>day</arg>
+<arg>12</arg>
+</arguments>
+<msg timestamp="20180909 19:33:32.110" level="INFO">Selecting value(s) '12' from list 'day'.</msg>
+<status status="PASS" endtime="20180909 19:33:32.264" starttime="20180909 19:33:32.106"></status>
+</kw>
+<status status="PASS" endtime="20180909 19:33:32.266" critical="yes" starttime="20180909 19:33:32.101"></status>
+</test>
+<test id="s1-s1-t3" name="Verify Page Should Contain">
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>Birthday</arg>
+</arguments>
+<msg timestamp="20180909 19:33:32.301" level="INFO">Current page contains text 'Birthday'.</msg>
+<status status="PASS" endtime="20180909 19:33:32.301" starttime="20180909 19:33:32.270"></status>
+</kw>
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="u_0_2"]</arg>
+</arguments>
+<msg timestamp="20180909 19:33:32.323" level="INFO">Current page contains input 'xpath=//*[@id="u_0_2"]'.</msg>
+<status status="PASS" endtime="20180909 19:33:32.323" starttime="20180909 19:33:32.302"></status>
+</kw>
+<kw name="Page Should Not Contain" library="Selenium2Library">
+<doc>Verifies the current page does not contain `text`.</doc>
+<arguments>
+<arg>Pankaj</arg>
+</arguments>
+<msg timestamp="20180909 19:33:32.441" level="INFO">Current page does not contain text 'Pankaj'.</msg>
+<status status="PASS" endtime="20180909 19:33:32.441" starttime="20180909 19:33:32.324"></status>
+</kw>
+<status status="PASS" endtime="20180909 19:33:32.442" critical="yes" starttime="20180909 19:33:32.268"></status>
+</test>
+<test id="s1-s1-t4" name="Verify IF Condition">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Page Should Contain Button</arg>
+<arg>xpath=//*[@id="u_0_2"]</arg>
+</arguments>
+<assign>
+<var>${IfC}</var>
+</assign>
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button identified by `locator` is found from current page.</doc>
+<arguments>
+<arg>xpath=//*[@id="u_0_2"]</arg>
+</arguments>
+<msg timestamp="20180909 19:33:32.460" level="INFO">Current page contains input 'xpath=//*[@id="u_0_2"]'.</msg>
+<status status="PASS" endtime="20180909 19:33:32.460" starttime="20180909 19:33:32.445"></status>
+</kw>
+<msg timestamp="20180909 19:33:32.461" level="INFO">${IfC} = True</msg>
+<status status="PASS" endtime="20180909 19:33:32.461" starttime="20180909 19:33:32.444"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${IfC}</arg>
+</arguments>
+<msg timestamp="20180909 19:33:32.462" level="INFO">True</msg>
+<status status="PASS" endtime="20180909 19:33:32.464" starttime="20180909 19:33:32.461"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${IfC}=='True'</arg>
+<arg>Go To</arg>
+<arg>https://www.yandex.com</arg>
+</arguments>
+<status status="PASS" endtime="20180909 19:33:32.465" starttime="20180909 19:33:32.464"></status>
+</kw>
+<status status="PASS" endtime="20180909 19:33:32.465" critical="yes" starttime="20180909 19:33:32.443"></status>
+</test>
+<status status="PASS" endtime="20180909 19:33:32.466" starttime="20180909 19:33:09.560"></status>
+</suite>
+<status status="PASS" endtime="20180909 19:33:32.470" starttime="20180909 19:33:09.532"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="4">Critical Tests</stat>
+<stat fail="0" pass="4">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Robot" pass="4">Robot</stat>
+<stat fail="0" id="s1-s1" name="Slice Issue" pass="4">Robot.Slice Issue</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,6 +1,7 @@
 *** Settings ***
 Library    Selenium2Library    
-Library    String    
+Library    String 
+   
 *** Variable ***
 
 *** Keywords ***
@@ -9,6 +10,7 @@ Create random Number
     Log     ${str1}
     ${ret}    Generate Random String
     Log    ${ret}
+
 *** Test Cases ***
 Test
     Create random Number    
